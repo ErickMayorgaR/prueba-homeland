@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('code')->unique(); // Código de producto único
             $table->string('name'); // Nombre del producto
             $table->integer('quantity'); // Cantidad
-            $table->string('photo'); // Fotografía (nombre del archivo)
+            $table->longText('photo')->nullable();             
             $table->decimal('price', 10, 2); // Precio con 2 decimales
             $table->date('entry_date'); // Fecha de ingreso
             $table->date('expiry_date'); // Fecha de vencimiento

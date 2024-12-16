@@ -11,7 +11,11 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
- 
+        $middleware->group('web', [
+            // Middleware predeterminado de Laravel
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+          
+        ]);
 
 
     })
